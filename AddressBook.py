@@ -3,59 +3,6 @@ Final Project: Address Book Management System
 Course: Programming Logic and Design
 Objective:
 Create a console-based Address Book Management System that allows users to store, edit, delete, view, and search for contacts using Python.
-
-Project Requirements:
-User Menu
-
-Display a menu with options to:
-Add a contact
-Edit a contact
-Delete a contact
-View all contacts
-Search for a contact
-Exit the program
-Adding a Contact
-
-Allow users to input:
-First name
-Last name
-Address
-Phone number
-Store these details in appropriate data structures.
-Editing a Contact
-
-Allow users to update:
-Full Name
-Address
-Phone Number
-Ensure changes are reflected in stored contact details.
-Deleting a Contact
-
-Allow users to remove a contact by name.
-Viewing All Contacts
-
-Display all stored contacts in a tabular format.
-Searching for a Contact
-
-Provide search functionality by:
-Full name
-Phone number
-Data Handling
-
-Use lists to store multiple contacts.
-Ensure data consistency when updating or deleting records.
-User Input Validation
-
-Ensure users enter valid data types (e.g., numeric values for phone numbers).
-Handle errors if a user tries to edit/delete/search for a non-existent contact.
-Program Termination
-
-The program should allow users to exit gracefully.
-Bonus Features (For Extra Points)
-Implement file handling to save contacts permanently.
-Allow multiple contacts to be added in a single run.
-Implement error handling for invalid inputs.
-
 '''
 full_names = []
 first_name_list = []
@@ -64,7 +11,6 @@ addresses = []
 contact_numbers = []
 answers = list(range(1, 100))
 run = True
-
 
 def print_intro():
     print("===============================================================Welcome to Address Book=====================================")
@@ -82,14 +28,12 @@ def add_contact():
     while not contact_num.isdigit():
         contact_num = input("Enter a valid Contact Number (digits only): ")
 
-
     first_name_list.append(first_name)
     last_name_list.append(last_name)
     full_names.append(first_name + " " + last_name)
     addresses.append(address)
     contact_numbers.append(contact_num)
     print("Your inputs are successfully added. ")
-
 
 def edit_contact():
     print('''
@@ -157,7 +101,6 @@ def delete_contact():
         print("Contact not found!")
         print("Please check the name and contact number you entered. ")
 
-        
 def view_contact():
     print("{:<20} {:<30} {:<15}".format("NAME", "ADDRESS", "PHONE NUMBER"))
     for i in range(len(full_names)):
@@ -194,7 +137,6 @@ Search by:
     else:
         print("Invalid option!")
     
-
 def run_the_program():
     while True:
         option = print_intro()
